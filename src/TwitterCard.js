@@ -8,7 +8,7 @@ const TwitterCard = () => {
 
   useEffect(() => {
     axios
-      .get("https://swapi.co/api/people/?format=json")
+      .get("https://randomuser.me/api/")
       .then(response => {
         setPeople(response.data.results);
       })
@@ -25,8 +25,8 @@ const TwitterCard = () => {
           <CardContent
             key={character}
             name={character.name.first}
+            Img={character.picture.large}
             email={character.email}
-            dob={character.dob.age}
             gender={character.gender}
           />
         );
